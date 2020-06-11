@@ -1,10 +1,9 @@
-const requireStartTime = Date.now()
-
 exports.default = createReporter
 module.exports = createReporter
 
 function createReporter () {
   let fixtureStartTime = -1
+  const reporterCreatedTime = Date.now()
 
   return {
     noColors: false,
@@ -32,7 +31,7 @@ function createReporter () {
 
       this.setIndent(1)
         .write(this.chalk.grey(
-          `Startup time (${this.fmtTime(startTime - requireStartTime)})`
+          `Startup time (${this.fmtTime(startTime - reporterCreatedTime)})`
         ))
         .newline()
     },
@@ -182,7 +181,7 @@ function createReporter () {
       }
 
       this.write(this.chalk.grey(
-        `Total time (${this.fmtTime(Date.now() - requireStartTime)})`
+        `Total time (${this.fmtTime(Date.now() - reporterCreatedTime)})`
       )).newline()
     },
 
