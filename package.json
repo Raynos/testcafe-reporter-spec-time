@@ -1,6 +1,6 @@
 {
   "name": "testcafe-reporter-spec-time",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "A testcafe reporter with timing information",
   "repository": "https://github.com/Raynos/testcafe-reporter-spec-time",
   "author": {
