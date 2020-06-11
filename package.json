@@ -1,8 +1,8 @@
 {
-  "name": "testcafe-reporter-spec",
+  "name": "testcafe-reporter-spec-time",
   "version": "2.1.1",
-  "description": "Spec TestCafe reporter plugin.",
-  "repository": "https://github.com/DevExpress/testcafe-reporter-spec",
+  "description": "A testcafe reporter with timing information",
+  "repository": "https://github.com/Raynos/testcafe-reporter-spec-time",
   "author": {
     "name": "Developer Express Inc. ",
     "url": "https://devexpress.com"
@@ -12,9 +12,7 @@
     "lib"
   ],
   "scripts": {
-    "test": "gulp test",
-    "publish-please": "publish-please",
-    "prepublish": "publish-please guard"
+    "test": "gulp test"
   },
   "keywords": [
     "testcafe",
