@@ -1,20 +1,16 @@
-# testcafe-reporter-spec
-[![Build Status](https://travis-ci.org/DevExpress/testcafe-reporter-spec.svg)](https://travis-ci.org/DevExpress/testcafe-reporter-spec)
+# testcafe-reporter-spec-time
 
-This is the **Spec** reporter plugin for [TestCafe](http://devexpress.github.io/testcafe).
+This is a fork of the builtin `testcafe-reporter-spec` but with
+timing information everywhere.
 
 <p align="center">
-    <img src="https://raw.github.com/DevExpress/testcafe-reporter-spec/master/media/preview.png" alt="preview" />
+    <img src="https://raw.github.com/Raynos/testcafe-reporter-spec-time/master/media/preview.png" alt="preview" />
 </p>
 
 ## Install
 
-This reporter is shipped with TestCafe by default. In most cases, you won't need to install it separately.
-
-However, if you need to install this reporter, you can use the following command.
-
 ```
-npm install testcafe-reporter-spec
+npm install testcafe-reporter-spec-time
 ```
 
 ## Usage
@@ -22,20 +18,5 @@ npm install testcafe-reporter-spec
 When you run tests from the command line, specify the reporter name by using the `--reporter` option:
 
 ```
-testcafe chrome 'path/to/test/file.js' --reporter spec
+testcafe chrome 'path/to/test/file.js' -r spec-time
 ```
-
-
-When you use API, pass the reporter name to the `reporter()` method:
-
-```js
-testCafe
-    .createRunner()
-    .src('path/to/test/file.js')
-    .browsers('chrome')
-    .reporter('spec') // <-
-    .run();
-```
-
-## Author
-Developer Express Inc. (https://devexpress.com)
