@@ -12,7 +12,6 @@ function createReporter () {
     testCount: 0,
     skipped: 0,
     currentFixtureName: null,
-    timings: Object.create(null),
 
     reportTaskStart (startTime, userAgents, testCount) {
       this.startTime = startTime
@@ -75,10 +74,7 @@ function createReporter () {
       })
     },
 
-    reportTestStart (name, meta) {
-      const key = this.currentFixtureName + ' ' + name
-      this.timings[key] = Date.now()
-    },
+    reportTestStart (name, meta) {},
 
     reportTestDone (name, testRunInfo) {
       var hasErr = !!testRunInfo.errs.length
@@ -112,10 +108,8 @@ function createReporter () {
         title += ` (screenshots: ${screen})`
       }
 
-      const key = this.currentFixtureName + ' ' + name
-      const duration = Date.now() - this.timings[key]
       this.write(title)
-      this.write(' ' + this.chalk.grey('(' + this.fmtTime(duration) + ')'))
+      this.write(' ' + this.chalk.grey('(' + this.fmtTime(testRunInfo.durationMs) + ')'))
 
       if (hasErr) {
         this._renderErrors(testRunInfo.errs)
